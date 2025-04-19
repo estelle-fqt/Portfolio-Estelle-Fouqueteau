@@ -1,0 +1,16 @@
+# Node modules
+node_modules/
+
+# Fichiers maps générés par Sass
+*.map
+
+# Fichiers système
+Thumbs.db
+desktop.ini
+
+# Dossier de build (si build du site)
+dist/
+build/
+
+# IDE
+.vscode/
