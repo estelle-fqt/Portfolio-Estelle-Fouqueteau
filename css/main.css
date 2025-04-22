@@ -15,6 +15,7 @@ h1 {
 
 h2 {
   font-size: 40px;
+  padding-left: 2rem;
 }
 
 .banner {
@@ -82,12 +83,13 @@ h2 {
 }
 
 .about {
-  margin: 70px 20px 30px 20px;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
   height: 500px;
 }
 .about h2 {
-  margin-bottom: 20px;
-  text-align: center;
+  color: #711a2e;
+  margin-bottom: 4rem;
 }
 .about .about-contain {
   display: flex;
@@ -110,7 +112,6 @@ h2 {
 
 .skills h2 {
   color: #d96f66;
-  padding-left: 2rem;
   margin-top: 4rem;
 }
 .skills .skills-contain {
@@ -215,7 +216,8 @@ h2 {
   position: relative;
 }
 .portfolio h2 {
-  color: #ae7c9f;
+  padding: 0;
+  color: #451c47;
   margin-bottom: 40px;
 }
 .portfolio .projects-wrapper {
@@ -382,7 +384,6 @@ h2 {
 }
 
 .contact {
-  padding-left: 2rem;
   margin-bottom: 100px;
 }
 .contact .contact-title {

@@ -19,6 +19,7 @@ h1 {
 }
 h2 {
   font-size: 40px;
+  padding-left: 2rem;
 }
 
 .banner {
@@ -93,12 +94,13 @@ h2 {
 }
 
 .about {
-  margin: 70px 20px 30px 20px;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
   height: 500px;
 
   h2 {
-    margin-bottom: 20px;
-    text-align: center;
+    color: $red-color;
+    margin-bottom: 4rem;
   }
 
   .about-contain {
@@ -126,7 +128,6 @@ h2 {
 .skills {
   h2 {
     color: #d96f66;
-    padding-left: 2rem;
     margin-top: 4rem;
   }
   .skills-contain {
@@ -248,7 +249,8 @@ h2 {
   position: relative;
 
   h2 {
-    color: #ae7c9f;
+    padding: 0;
+    color: $pink-color;
     margin-bottom: 40px;
   }
 
@@ -433,7 +435,6 @@ h2 {
 }
 
 .contact {
-  padding-left: 2rem;
   margin-bottom: 100px;
 
   .contact-title {
