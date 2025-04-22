@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: aqua;
+}
+
+.banner {
+  height: 200px;
+  border: solid;
+}
+
+.about {
+  height: 200px;
+  border: solid;
+}
+
+.skills {
+  background-color: black;
+  height: 200px;
+  border: solid;
+}
+
+.portfolio {
+  height: 200px;
+  border: solid;
+}
+
+.contact {
+  height: 200px;
+  border: solid;
+}
+
+.footer {
+  background-color: black;
+  height: 200px;
+  border: solid;
+}/*# sourceMappingURL=main.css.map */
