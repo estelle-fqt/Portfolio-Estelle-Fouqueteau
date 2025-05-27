@@ -96,32 +96,77 @@ h2 {
 .about {
   margin-top: 4rem;
   margin-bottom: 4rem;
-  height: 500px;
 
   h2 {
     color: $red-color;
     margin-bottom: 4rem;
   }
 
-  .about-contain {
+  .about-content {
     display: flex;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    gap: 40px;
   }
 
-  .img-background {
-    height: 300px;
-    transform: rotate(270deg);
-    position: relative;
-    left: -62px;
-    top: 70px;
+  .animation {
+    border: solid white;
+    height: 500px;
+    width: 20%;
   }
 
-  p {
-    width: 300px;
-    height: 300px;
-    font-size: 20px;
+  .about-me {
+    width: 80%;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    .my-history,
+    .my-philosophy,
+    .my-softskills {
+      background-color: #ffffff10; // transparence douce si fond foncé
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+      flex: 1; // chaque card occupe la même largeur
+      height: fit-content; // s'adapte à la taille du contenu
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+    }
+
+    .my-history {
+      margin-top: 0rem;
+    }
+
+    .my-philosophy {
+      margin-top: 6rem;
+    }
+
+    .my-softskills {
+      margin-top: 2rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      color: purple;
+      margin-bottom: 1rem;
+    }
+
+    h4 {
+      color: #30a6be;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #eee;
+    }
   }
 }
 
@@ -172,7 +217,6 @@ h2 {
       padding: 30px;
       box-sizing: border-box;
       backface-visibility: hidden;
-      background-color: #fff;
       border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
@@ -204,7 +248,7 @@ h2 {
 
     &__back {
       background: #1f1f1f;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
       color: white;
       padding: 1rem;
       transform: rotateY(180deg);
@@ -250,7 +294,7 @@ h2 {
 
   h2 {
     padding: 0;
-    color: $pink-color;
+    color: purple;
     margin-bottom: 40px;
   }
 
@@ -368,7 +412,7 @@ h2 {
   border-radius: 15px;
   max-width: 600px;
   width: 100%;
-  height: 400px;
+  // height: 400px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
 
   #modal-body {
@@ -411,7 +455,7 @@ h2 {
     .visit-site {
       padding: 0.5rem 1rem;
       position: absolute;
-      top: 23rem;
+      top: 18rem;
       right: 2rem;
       background: #ae7c9f;
       color: #fff;

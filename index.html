@@ -7,7 +7,7 @@
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-  />
+    />
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
@@ -27,22 +27,43 @@
     </div>
     <section class="about" id="about">
       <h2>A propos de moi</h2>
-      <div class="about-contain">
-        <!-- <img
-          src="./assets/img4.png"
-          alt="image de fond avec fumée de couleurs"
-          class="img-background"
-        /> -->
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-          Necessitatibus accusamus iure aliquam dicta tenetur quod hic, a,
-          voluptas porro fugiat ducimus maxime. Ea repudiandae velit officia
-          tempora perspiciatis numquam dignissimos. Lorem ipsum dolor, sit amet
-          consectetur adipisicing elit. Eaque minima rerum optio officiis
-          perspiciatis aliquam, assumenda doloremque libero voluptas! Quis nulla
-          voluptatibus quaerat id placeat, error quia assumenda eius sed!
-        </p>
-      </div>
+        <div class="about-content">
+            <div class="animation">
+                <p>animation personnage illustré</p>
+            </div>
+            <div class="about-me">
+                <div class="my-history">
+                    <h3>Estelle, développeuse web passionnée</h3>
+                    <p>
+                      Depuis toujours, devant chaque problème, je vois une solution en attente. <br>
+C'est ce qui m'a attiré en psychologie : résoudre les mystères de la complexité humaine. <br>
+Aujourd'hui, à l'ère du numérique, c'est au travers du développement que je vis cette passion.
+Chaque projet est pour moi l'occasion d'impacter positivement la vie des gens et d'être actrice dans un secteur en constante évolution.
+                    </p>
+                </div>
+                <div class="my-philosophy">
+                    <h4>Ma philosophie</h4>
+                    <p>
+                      Je crois fermement que la clé de la satisfaction client est le partage de valeurs et de compétences au sein de l’équipe. <br>
+De plus, chaque projet répond à un besoin, une attente. <br>
+C'est en ce sens que je travaille. <br>Je garde toujours à l'esprit que la réussite et l'innovation sont les résultats d'une collaboration active, d'une rigueur et d'un progrès professionnel permanent.
+                    </p>
+                </div>
+                <div class="my-softskills">
+                    <h4>Mes passions</h4>
+                    <p>En dehors du développement web, je vis à travers mes multiples centres d'intérêts et passions :</p>
+                    <ul>
+                        <li>l'artisanat</li>
+                        <li>la créations</li>
+                        <li>l'herboristerie</li>
+                        <li>les médecines naturelles</li>
+                        <li>les sciences : biologie, astrologie, neurologie</li>
+                        <li>les casses tête, puzzle, jeux de reflexion</li>
+                        <li>la musique : guitare, piano</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
     <section class="skills" id="skills">
       <h2>Compétences</h2>
@@ -60,7 +81,7 @@
                   <li>CSS3</li>
                   <li>JavaScript</li>
                   <li>React</li>
-                  <li>Redux</li>
+                  <li>Redux Toolkit</li>
                 </ul>
               </div>
 
@@ -68,7 +89,7 @@
                 <h3>Backend</h3>
                 <ul class="backend">
                   <li>Node.js</li>
-                  <li>Express</li>
+                  <li>Express.js</li>
                 </ul>
               </div>
 
@@ -76,6 +97,7 @@
                 <h3>Autres</h3>
                 <ul class="other">
                   <li>API REST</li>
+                  <li>MySQL</li>
                   <li>Sass</li>
                 </ul>
               </div>
@@ -140,11 +162,21 @@
                     <h3>Qualités humaines</h3>
                     <ul>
                       <li>Autonome & curieuse</li>
-                      <li>bonne communication</li>
+                      <li>Bonne communication</li>
                       <li>Sens de l'organisation</li>
                       <li>Esprit d'équipe</li>
                     </ul>
-                </div>            
+                </div>  
+                <div class="cards-group">
+                   <h3>Personnalité</h3>
+                    <ul>
+                      <li>Grande capacité de concentration</li>
+                      <li>Attentive aux détails et incohérences</li>
+                      <li>Pensée logique et structurée</li>
+                      <li>Bonne mémoire</li>
+                      <li>Honnêteté</li>
+                    </ul>
+                </div>          
           </div>
         </div>
       </div>
@@ -183,6 +215,14 @@
                     <h3>Site internet développeuse web Estelle Fouqueteau</h3>
                     <img src="./assets/projects/projet7.png" alt="preview du site de Estelle Fouqueteau">
                 </div>
+                <div class="project-card" data-project="7">
+                    <h3>Site internet de l'agence événementielle 724events</h3>
+                    <img src="./assets/projects/projet8.png" alt="preview du site de 724events">
+                </div>
+                <div class="project-card" data-project="8">
+                    <h3>Site internet de la banque ArgentBank</h3>
+                    <img src="./assets/projects/projet9.png" alt="preview du site de ArgentBank">
+                </div>
               </div>        
         </div>
       </div>
@@ -199,8 +239,10 @@
             <h4 id="modal-stack-title">Stack technique :</h4>
             <ul id="modal-stack"></ul>
 
+            <h4 id="modal-time-title">Temps</h4>
             <p id="modal-time"></p>
-            <h4 id="modal-skills-title">Softskills :</h4>
+
+            <h4 id="modal-skills-title">Skills :</h4>
             <ul id="modal-skills"></ul>
 
             <a id="modal-link" href="#" target="_blank" class="visit-site">Voir le projet</a>
@@ -212,7 +254,6 @@
       <h2 class="contact-title">Me contacter</h2>
 
       <div class="contact-content">
-        <!-- Partie gauche - infos -->
         <div class="contact-infos">
           <img src="./assets/estelleFouqueteau.webp" alt="Photo de profil" class="contact-photo" />
           <h3>Estelle Fouqueteau</h3>
@@ -221,8 +262,8 @@
           </p>
           <p>
             <i class="fa fa-envelope"></i>
-            <a href="mailto:estelle.fouqueteau@outlook.fr" class="contact-email">
-              estelle.fouqueteau@outlook.fr
+            <a href="mailto:estelle.fqt2@outlook.fr" class="contact-email">
+              estelle.fqt29@outlook.fr
             </a>
           </p>
     
@@ -235,31 +276,6 @@
             </a>
           </div>
         </div>
-    
-        <!-- Formulaire de contact -->
-        <form id="contact-form" class="contact-form">
-          <div class="input-group">
-            <label for="firstName">Prénom</label>
-            <input type="text" id="firstName" name="firstName" required />
-          </div>
-    
-          <div class="input-group">
-            <label for="lastName">Nom</label>
-            <input type="text" id="lastName" name="lastName" required />
-          </div>
-    
-          <div class="input-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required />
-          </div>
-    
-          <div class="input-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-          </div>
-    
-          <button type="submit" class="btn-submit">Envoyer</button>
-        </form>
       </div>
 
     </section>

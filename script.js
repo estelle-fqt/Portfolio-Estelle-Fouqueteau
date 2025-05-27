@@ -37,72 +37,98 @@ const modalTime = document.getElementById("modal-time");
 const modalLink = document.getElementById("modal-link");
 const closeModal = document.querySelector(".close-modal");
 
-// Données de tes projets (à adapter selon tes besoins)
+// Données des projets
 const projectDetails = [
   {
-    title: "Site internet de Booki - agence immobilière",
+    title: "Site internet de Booki - agence de voyage",
     img: "./assets/projects/projet1.png",
-    description: "Un site responsive pour la recherche de logements à louer",
-    stack: "HTML, CSS, JavaScript, API REST",
-    time: "2 semaines",
-    skills: "compétences softskills",
-    link: "https://",
+    description:
+      "Agence de voyage pour la recherche de logements à louer et activités partout en France",
+    stack: "HTML, CSS, responsive",
+    time: "1 semaine",
+    skills:
+      "Implémenter une interface responsive avec HTML et CSS, Installer un environnement de développement front-end, Intégrer du contenu conformément à une maquette avec HTML et CSS",
+    link: "",
   },
   {
     title: "Site internet OhMyFood - réservation de menu en ligne",
     img: "./assets/projects/projet2.png",
-    description:
-      "Une expérience UX/UI de réservation de plats dans des restaurants",
-    stack: "HTML, CSS, JavaScript, API REST",
+    description: "Une expérience UX/UI avec intégration d'animations",
+    stack: "HTML, CSS, Sass, Mobile first",
     time: "2 semaines",
-    skills: "compétences softskills",
-    link: "https://",
+    skills:
+      "Intégrer une maquette en mobile-first, Mettre en œuvre des animations CSS, Versionner le projet avec Git et Github",
+    link: "https://estelle-fqt.github.io/Projet4-OhMyFood/",
   },
   {
     title: "Site internet de l'architecte d'intérieur Sophie Bluel",
     img: "./assets/projects/projet3.png",
     description: "Une expérience JavaScript pour dynamiser un site web",
-    stack: "HTML, CSS, JavaScript, API REST",
-    time: "Temps : 2 semaines",
-    skills: "compétences, compétences",
-    link: "https://",
+    stack: "HTML CSS, JavaScript, API REST",
+    time: "2 semaines",
+    skills:
+      "Récupérer les données utilisateurs dans le JavaScript via des formulaires, Gérer les événements utilisateurs avec JavaScript, Manipuler les éléments du DOM avec JavaScript",
+    link: "",
   },
   {
     title: "Site internet Kasa - réservation de location",
     img: "./assets/projects/projet4.png",
     description: "Une expérience de création d'application web en React",
-    stack: "HTML, CSS, JavaScript, API REST",
+    stack: "HTML CSS, React, Node.js",
     time: "2 semaines",
-    skills: "compétences softskills",
-    link: "https://",
+    skills:
+      "Intégrer una application avec React et Vite, Configurer la navigation entre les pages avec React Router, Mettre en œuvre des animations CSS, Développer une interface web avec Sass",
+    link: "",
   },
   {
     title: "Site internet de la photographe Nina Carducci",
     img: "./assets/projects/projet5.png",
     description:
       "Une expérience d'optimisation du référencement et d'optimisation de performances",
-    stack: "HTML, CSS, JavaScript, API REST",
-    time: "2 semaines",
-    skills: "compétences softskills",
-    link: "https://",
+    stack:
+      "SEO, audit LightHouse, accessibilité, performance, rapport d'optimisation",
+    time: "1 semaine",
+    skills: "Optimiser la performance d'un site web",
+    link: "https://estelle-fqt.github.io/Projet8-Referencement/",
   },
   {
     title: "Site internet de la photographe Robbie Lens",
     img: "./assets/projects/projet6.png",
     description: "Une expérience de création d'un site web en HTML et CSS",
-    stack: "HTML, CSS, JavaScript, API REST",
-    time: "2 semaines",
-    skills: "compétences softskills",
-    link: "https://",
+    stack: "HTML, CSS",
+    time: "1 semaine",
+    skills: "Intégration de l'interface d'un site web",
+    link: "https://estelle-fqt.github.io/Photographe-RobbieLens/",
   },
   {
     title: "Site internet développeuse web Estelle Fouqueteau",
     img: "./assets/projects/projet7.png",
-    description: "Une expérience de création de site web en React",
-    stack: "HTML, CSS, JavaScript, API REST",
+    description: "Création de mon site web en tant que freelance",
+    stack: "HTML, CSS, React",
     time: "2 semaines",
-    skills: "compétences softskills",
-    link: "https://",
+    skills: "Intégration d'un site web dynamique en React.js",
+    link: "https://espritdev.com/",
+  },
+  {
+    title: "Site internet de l'agence événementielle 724events'",
+    img: "./assets/projects/projet8.png",
+    description: "Une expérience de debogage d'un site web",
+    stack:
+      "Tests unitaires, Tests fonctionnels, React Developer Tools, Yarn, Node.js",
+    time: "1 semaine",
+    skills:
+      "Débugger un site web grâce aux Chrome DevTools, Rédiger un cahier de recette pour tester un site",
+    link: "https://github.com/estelle-fqt/Projet9-Debugger-un-site",
+  },
+  {
+    title: "Site internet de la banque ArgentBank'",
+    img: "./assets/projects/projet9.png",
+    description: "Intégration en React et gestion d'état avec Redux",
+    stack: "React.js, Redux Toolkit, API REST et Swagger, Node.js",
+    time: "2 semaines",
+    skills:
+      "Afficher les données du backend sur l'interface via des appels API, Configurer des routes API pour la communication client / serveur, Implémenter la gestion des données avec Redux pour assurer le fonctionnement du front",
+    link: "https://github.com/estelle-fqt/Project-10-Bank-API",
   },
 ];
 
@@ -118,9 +144,15 @@ document.querySelectorAll(".project-card").forEach((card) => {
     modalImg.alt = `aperçu du projet ${project.title}`;
     modalDescription.textContent = project.description;
     modalTime.textContent = project.time;
-    modalLink.href = project.link;
+    //gestion du bouton "voir le projet"
+    if (project.link && project.link.trim() !== "") {
+      modalLink.href = project.link;
+      modalLink.style.display = "inline-block"; // ou "flex" selon ton CSS
+    } else {
+      modalLink.style.display = "none";
+    }
 
-    // Ajouter la stack sous forme de liste à puces
+    // Ajoute la stack sous forme de liste à puces
     const modalStack = document.getElementById("modal-stack");
     modalStack.innerHTML = ""; // Vider la liste avant d'ajouter de nouveaux éléments
     project.stack.split(", ").forEach((item) => {
@@ -129,7 +161,7 @@ document.querySelectorAll(".project-card").forEach((card) => {
       modalStack.appendChild(li);
     });
 
-    // Ajouter les softskills sous forme de liste à puces
+    // Ajoute les softskills sous forme de liste à puces
     const modalSkills = document.getElementById("modal-skills");
     modalSkills.innerHTML = ""; // Vider la liste avant d'ajouter de nouveaux éléments
     project.skills.split(", ").forEach((item) => {
@@ -153,38 +185,3 @@ modal.addEventListener("click", (e) => {
     modal.classList.remove("show");
   }
 });
-
-// ***** Gestion Contact ***** //
-
-document
-  .getElementById("contact-form")
-  .addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const formData = {
-      firstName: document.getElementById("firstName").value,
-      lastName: document.getElementById("lastName").value,
-      email: document.getElementById("email").value,
-      message: document.getElementById("message").value,
-    };
-
-    const formUrl = "https://formspree.io/f/mdkegjaa";
-    fetch(formUrl, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    }).then((response) => {
-      if (response.ok) {
-        document.getElementById("form-status").textContent =
-          "Message envoyé avec succès !";
-        document.getElementById("contact-form").reset(); // Réinitialise le formulaire
-      } else {
-        document.getElementById("form-status").textContent =
-          "Erreur lors de l'envoi. Réessayez plus tard.";
-      }
-    });
-    //   .catch((error) => {
-    //     document.getElementById("form-status").textContent =
-    //       "Erreur de connexion. Veuillez réessayer plus tard.";
-    //   });
-  });
