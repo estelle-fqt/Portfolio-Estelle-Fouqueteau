@@ -121,7 +121,7 @@ const projectDetails = [
     link: "https://github.com/estelle-fqt/Projet9-Debugger-un-site",
   },
   {
-    title: "Site internet de la banque ArgentBank'",
+    title: "Site internet de la banque ArgentBank",
     img: "./assets/projects/projet9.png",
     description: "Intégration en React et gestion d'état avec Redux",
     stack: "React.js, Redux Toolkit, API REST et Swagger, Node.js",
