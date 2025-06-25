@@ -13,53 +13,73 @@
   <body>
     <div class="banner">
       <h1>
-        Bienvenue dans <br />
-        <span class="typing">mon univers</span>
+        Bienvenue <br>
+        <br>
+        Je suis <br>Estelle <br> Fouqueteau <br>
+        <br>
+        <span class="typing" id="typed-text"></span>
       </h1>
-      <nav class="menu">
+      <div id="lottie-list"></div>
+      <nav class="menu" id="main-menu">
         <ol>
-          <li><a href="#about">A propose de moi</a></li>
+          <li><a href="#about">Qui suis-je ?</a></li>
           <li><a href="#skills">Compétences</a></li>
           <li><a href="#portfolio">Réalisations</a></li>
           <li><a href="#contact">Me contacter</a></li>
         </ol>
       </nav>
+      <!-- Menu mobile -->
+      <nav id="mobile-menu">
+        <ul>
+          <li><a href="#about">Qui suis-je ?</a></li>
+          <li><a href="#skills">Compétences</a></li>
+          <li><a href="#portfolio">Réalisations</a></li>
+          <li><a href="#contact">Me contacter</a></li>
+        </ul>
+      </nav>
+          
     </div>
     <section class="about" id="about">
-      <h2>A propos de moi</h2>
+      <h2>Qui suis-je ?</h2>
         <div class="about-content">
-            <!-- <div class="animation">
-                <p>animation personnage illustré</p>
-            </div> -->
             <div class="about-me">
                 <div class="my-history">
-                    <h3>Estelle, développeuse web passionnée</h3>
+                    <h3>Une développeuse web passionnée</h3>
                     <p>
-                      Depuis toujours, devant chaque problème, je vois une solution en attente. <br>
-C'est ce qui m'a attiré en psychologie : résoudre les mystères de la complexité humaine. <br>
-Aujourd'hui, à l'ère du numérique, c'est au travers du développement que je vis cette passion.
-Chaque projet est pour moi l'occasion d'impacter positivement la vie des gens et d'être actrice dans un secteur en constante évolution.
+                      Pour chaque problème, j'imagine une solution qui n'attend qu'à être codée. <br>
+                      <br>
+                      Diplômée en <strong>Psychologie</strong>, j'ai toujours été fascinée par la complexité humaine. <br>
+                      <br>
+                      Aujourd'hui, à l'ère du numérique, j'ai trouvé dans le développement web un terrain d'expression unique : <br> celui où la logique rencontre la créativité. <br>
+                      <br>
+                      Grâce à ma formation d' <strong>Intégrateur web</strong>, je transforme les besoins en solutions concrètes et sur mesure. <br>
+                      Chaque projet est une opportunité de créer un impact positif, d'innover et d'évoluer dans un secteur en perpétuel mouvement.
                     </p>
                 </div>
                 <div class="my-philosophy">
                     <h4>Ma philosophie</h4>
                     <p>
-                      Je crois fermement que la clé de la satisfaction client est le partage de valeurs et de compétences au sein de l’équipe. <br>
-De plus, chaque projet répond à un besoin, une attente. <br>
-C'est en ce sens que je travaille. <br>Je garde toujours à l'esprit que la réussite et l'innovation sont les résultats d'une collaboration active, d'une rigueur et d'un progrès professionnel permanent.
+                      Pour moi, un projet réussi est le fruit d'un alignement entre les <strong>valeurs humaines</strong> et les <strong>compétences techniques</strong>. <br>
+                      <br>
+                      Chaque réalisation est avant tout une réponse concrète à un besoin réel. <br>
+                      <br>
+                      C'est avec cette conviction que je m'implique à 100% dans chaque collaboration. <br>
+                      <br>
+                      Je suis convaincue que la réussite passe par l'intelligence collective, la rigueur au quotidien et une volonté de se dépasser.
                     </p>
                 </div>
                 <div class="my-softskills">
                     <h4>Mes passions</h4>
-                    <p>En dehors du développement web, je vis à travers mes multiples centres d'intérêts et passions :</p>
+                    <p>En dehors du développement web, je nourris ma curiosité à travers un éventail de passion qui façonnent ma créativité et ma vision du monde :</p>
+                    <br>
                     <ul>
-                        <li>l'artisanat</li>
-                        <li>la créations</li>
-                        <li>l'herboristerie</li>
-                        <li>les médecines naturelles</li>
-                        <li>les sciences : biologie, astrologie, neurologie</li>
-                        <li>les casses tête, puzzle, jeux de reflexion</li>
-                        <li>la musique : guitare, piano</li>
+                        <li>L'<strong>artisanat</strong> et la <strong>création manuelle</strong>, pour l'amour du fait main et du détail</li>
+                        <br>
+                        <li>L' <strong>herboristerie</strong> et les <strong>médecines naturelles</strong>, sources de bien-être et d'équilibre</li>
+                        <br>
+                        <li>Les <strong>sciences</strong>, de la biologie à la neurologie, en passant par l'astrologie, parce que comprendre le vivant m'inspire au quotidien</li>
+                        <br>
+                        <li>Les <strong>casses tête</strong>, puzzle et jeux de reflexion, pour cultiver la logique et la patience</li>
                     </ul>
                 </div>
             </div>
@@ -71,7 +91,7 @@ C'est en ce sens que je travaille. <br>Je garde toujours à l'esprit que la réu
         <div class="card">
           <div class="card__inner">
             <div class="card__front">
-              <p>Stack</p>
+              <p class="card__title">Stack</p>
             </div>
             <div class="card__back">
               <div class="cards-group">
@@ -108,7 +128,7 @@ C'est en ce sens que je travaille. <br>Je garde toujours à l'esprit que la réu
         <div class="card">
           <div class="card__inner">
             <div class="card__front">
-              <p>Outils</p>
+              <p class="card__title">Outils</p>
             </div>
             <div class="card__back">
               <div class="cards-group">
@@ -155,7 +175,7 @@ C'est en ce sens que je travaille. <br>Je garde toujours à l'esprit que la réu
         <div class="card">
           <div class="card__inner">
             <div class="card__front">
-              <p>Soft Skills</p>
+              <p class="card__title">Soft Skills</p>
             </div>
             <div class="card__back">
                 <div class="cards-group">
@@ -183,69 +203,106 @@ C'est en ce sens que je travaille. <br>Je garde toujours à l'esprit que la réu
     </section>
     <section class="portfolio" id="portfolio">
       <h2>Réalisations</h2>
-
-      <div class="carousel-container">
-        <div class="projects-carousel">
-            <div class="projects-wrapper">
-                <div class="project-card" data-project="0">
-                    <h3>Site internet de Booki - agence immobilière</h3>
-                    <img src="./assets/projects/projet1.png" alt="preview du site Booki">
-                </div>
-                <div class="project-card" data-project="1">
-                    <h3>Site internet OhMyFood - réservation de menu en ligne</h3>
-                    <img src="./assets/projects/projet2.png" alt="preview du site OhMyFood">
-                </div>
-                <div class="project-card" data-project="2">
-                    <h3>Site internet de l'architecte d'intérieur Sophie Bluel</h3>
-                    <img src="./assets/projects/projet3.png" alt="preview du site internet de Sophie Bluel">
-                </div>
-                <div class="project-card" data-project="3">
-                    <h3>Site internet Kasa - réservation de location</h3>
-                    <img src="./assets/projects/projet4.png" alt="previw du site Kasa">
-                </div>
-                <div class="project-card" data-project="4">
-                    <h3>Site internet de la photographe Nina Carducci</h3>
-                    <img src="./assets/projects/projet5.png" alt="preview du site de Nina Carducci">
-                </div>
-                <div class="project-card" data-project="5">
-                    <h3>Site internet de la photographe Robbie Lens</h3>
-                    <img src="./assets/projects/projet6.png" alt="preview du site de Robbie Lens">
-                </div>
-                <div class="project-card" data-project="6">
-                    <h3>Site internet développeuse web Estelle Fouqueteau</h3>
-                    <img src="./assets/projects/projet7.png" alt="preview du site de Estelle Fouqueteau">
-                </div>
-                <div class="project-card" data-project="7">
-                    <h3>Site internet de l'agence événementielle 724events</h3>
-                    <img src="./assets/projects/projet8.png" alt="preview du site de 724events">
-                </div>
-                <div class="project-card" data-project="8">
-                    <h3>Site internet de la banque ArgentBank</h3>
-                    <img src="./assets/projects/projet9.png" alt="preview du site de ArgentBank">
-                </div>
-              </div>        
-        </div>
-      </div>
+       <div class="projects-wrapper">                
+          <div class="project-card">
+            <h3>Site internet OhMyFood - réservation de menu en ligne</h3>
+            <img src="./assets/projects/projet2.png" alt="preview du site OhMyFood">
+            <div class="overlay">
+              <div class="btn-projet">
+                <button class="show-details" data-project="0">Voir les détails</button>
+                <a href="https://github.com/estelle-fqt/Projet4-OhMyFood" target="blank" rel="noreferrer" aria-label="GitHub">
+                <i class="fa-brands fa-github"></i>
+                GitHub</a>
+              </div>                     
+            </div>
+          </div>
+          <div class="project-card">
+            <h3>Site internet de l'architecte d'intérieur Sophie Bluel</h3>
+            <img src="./assets/projects/projet3.png" alt="preview du site internet de Sophie Bluel">
+            <div class="overlay">
+              <div class="btn-projet">
+                <button class="show-details" data-project="1">Voir les détails</button>
+                <a href="https://github.com/estelle-fqt/Projet6-architecte-sophie-bluel" target="blank" rel="noreferrer" aria-label="GitHub">
+                <i class="fa-brands fa-github"></i>
+                GitHub</a>
+              </div>                     
+            </div>
+          </div>
+          <div class="project-card">
+            <h3>Site internet Kasa - réservation de location</h3>
+            <img src="./assets/projects/projet4.png" alt="previw du site Kasa">
+            <div class="overlay">
+              <div class="btn-projet">
+                <button class="show-details" data-project="2">Voir les détails</button>
+                <a href="https://github.com/estelle-fqt/Projet7-Kasa" target="blank" rel="noreferrer" aria-label="GitHub">
+                <i class="fa-brands fa-github"></i>
+                GitHub</a>
+              </div>                     
+            </div>
+          </div>
+          <div class="project-card">
+            <h3>Site internet de la photographe Nina Carducci</h3>
+            <img src="./assets/projects/projet5.png" alt="preview du site de Nina Carducci">
+            <div class="overlay">
+              <div class="btn-projet">
+                <button class="show-details" data-project="3">Voir les détails</button>
+                <a href="https://github.com/estelle-fqt/Projet8-Referencement" target="blank" rel="noreferrer" aria-label="GitHub">
+                <i class="fa-brands fa-github"></i>
+                GitHub</a>
+              </div>                     
+            </div>
+          </div>          
+          <div class="project-card">
+            <h3>Site internet développeuse web Estelle Fouqueteau</h3>
+            <img src="./assets/projects/projet7.png" alt="preview du site de Estelle Fouqueteau">
+            <div class="overlay">
+              <div class="btn-projet">
+                <button class="show-details" data-project="4">Voir les détails</button>
+                <a href="https://github.com/estelle-fqt/Esprit-dev" target="blank" rel="noreferrer" aria-label="GitHub">
+                <i class="fa-brands fa-github"></i>
+                GitHub</a>
+              </div>                     
+            </div>
+          </div>                
+          <div class="project-card">
+            <h3>Site internet de la banque ArgentBank</h3>
+            <img src="./assets/projects/projet9.png" alt="preview du site de ArgentBank">
+            <div class="overlay">
+              <div class="btn-projet">
+                <button class="show-details" data-project="5">Voir les détails</button>
+                <a href="https://github.com/estelle-fqt/ArgentBank-Backend" target="blank" rel="noreferrer" aria-label="GitHub">
+                <i class="fa-brands fa-github"></i>
+                GitHub</a>
+              </div>                     
+            </div>
+          </div>
+        </div>        
 
       <div class="modal" id="project-modal">
         <div class="modal-content">
           <span class="close-modal">&times;</span>
           <div id="modal-body">
-            <h3 id="modal-title"></h3>
+            <div class="modal-details">
+              <h3 id="modal-title"></h3>
+              
+              <p id="modal-description"></p>
 
-            <img id="modal-img" src="" alt="">
-            <p id="modal-description"></p>
+              <h4 id="modal-stack-title">Stack technique :</h4>
+              <ul id="modal-stack"></ul>
 
-            <h4 id="modal-stack-title">Stack technique :</h4>
-            <ul id="modal-stack"></ul>
+              <h4 id="modal-time-title">Temps</h4>
+              <p id="modal-time"></p>
 
-            <h4 id="modal-time-title">Temps</h4>
-            <p id="modal-time"></p>
-
-            <h4 id="modal-skills-title">Skills :</h4>
-            <ul id="modal-skills"></ul>
-
-            <a id="modal-link" href="#" target="_blank" class="visit-site">Voir le projet</a>
+              <h4 id="modal-skills-title">Skills :</h4>
+              <ul id="modal-skills"></ul>
+            </div>
+            <div class="modal-assets">
+              <img id="modal-img" src="" alt="">
+              <a id="modal-link" href="#" target="_blank" class="visit-site">Voir le site</a>
+              <a href="https://github.com/estelle-fqt" target="blank" class="visit-github" rel="noreferrer" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+              GitHub</a>
+            </div>
           </div>
         </div>
       </div>
@@ -282,6 +339,8 @@ C'est en ce sens que je travaille. <br>Je garde toujours à l'esprit que la réu
     <footer class="footer">
         <p>© Tous droits réservés. Créer par Estelle Fouqueteau</p>
     </footer>
-    <script src="script.js"></script>
+    <script src="https://unpkg.com/lottie-web@5.7.4/build/player/lottie.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="script.js" defer></script>
   </body>
 </html>

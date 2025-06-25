@@ -18,44 +18,28 @@ h2 {
   padding-left: 2rem;
 }
 
+/* Section Accueil */
 .banner {
   background-image: url("../assets/backgroundImg.jpg");
   background-position: center;
   background-size: cover;
-  height: 120vh;
+  height: 600px;
   position: relative;
 }
 .banner h1 {
   position: absolute;
-  top: 150px;
+  top: 90px;
   left: 50px;
-  /* Animation pour l’écriture */
-  /* Animation du curseur clignotant */
 }
-.banner h1 .typing {
-  display: inline-block;
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 2px solid white;
-  width: 12ch;
-  animation: typing 3s steps(12) infinite alternate, blink 0.6s step-end infinite;
-}
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 12ch;
-  }
-}
-@keyframes blink {
-  50% {
-    border-color: transparent;
+@media (max-width: 475px) {
+  .banner h1 {
+    top: 150px;
+    font-size: 40px;
   }
 }
 .banner .menu {
   position: absolute;
-  top: 150px;
+  top: 90px;
   right: 45px;
   font-size: 40px;
 }
@@ -81,13 +65,74 @@ h2 {
   text-decoration: underline 4px;
   text-underline-offset: 15px;
 }
+@media (max-width: 768px) {
+  .banner .menu {
+    display: none;
+  }
+}
+.banner #lottie-list {
+  display: none;
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+  z-index: 1001;
+  position: absolute;
+  top: 50px;
+  right: 30px;
+}
+@media (max-width: 768px) {
+  .banner #lottie-list {
+    display: block;
+  }
+}
+.banner #mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 50%;
+  height: 100vh;
+  background-color: rgba(20, 20, 20, 0.98);
+  padding: 4rem 2rem;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: right 0.4s ease;
+}
+.banner #mobile-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.banner #mobile-menu ul li a {
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+.banner #mobile-menu.open {
+  right: 0;
+}
+@media (max-width: 376px) {
+  .banner #mobile-menu {
+    width: 83%;
+  }
+}
 
+body.noscroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* Section à propos */
 .about {
   margin-top: 4rem;
   margin-bottom: 4rem;
 }
 .about h2 {
-  color: #711a2e;
+  color: purple;
   margin-bottom: 4rem;
 }
 .about .about-content {
@@ -127,11 +172,30 @@ h2 {
 .about .about-me .my-history {
   margin-top: 0rem;
 }
+.about .about-me .my-history strong {
+  color: purple;
+}
 .about .about-me .my-philosophy {
   margin-top: 6rem;
 }
+.about .about-me .my-philosophy strong {
+  color: #30a6be;
+}
+@media (max-width: 1030px) {
+  .about .about-me .my-philosophy {
+    margin-top: 10px;
+  }
+}
 .about .about-me .my-softskills {
   margin-top: 2rem;
+}
+.about .about-me .my-softskills strong {
+  color: #30a6be;
+}
+@media (max-width: 1030px) {
+  .about .about-me .my-softskills {
+    margin-top: 10px;
+  }
 }
 .about .about-me h3 {
   font-size: 1.5rem;
@@ -147,7 +211,14 @@ h2 {
   line-height: 1.6;
   color: #eee;
 }
+@media (max-width: 1030px) {
+  .about .about-me {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 
+/* Section compétences*/
 .skills h2 {
   color: #d96f66;
   margin-top: 4rem;
@@ -168,7 +239,7 @@ h2 {
   height: 400px;
   perspective: 1000px;
   position: relative;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s linear;
   cursor: pointer;
 }
 .skills .card .card__inner {
@@ -208,11 +279,14 @@ h2 {
   border: solid 0.5px white;
   border-radius: 10px;
 }
-.skills .card__front p {
+.skills .card__front .card__title {
   color: white;
   font-size: 40px;
   position: absolute;
   top: 80px;
+}
+.skills .card__front .card__title.hidden {
+  display: none;
 }
 .skills .card__back {
   background: #1f1f1f;
@@ -250,7 +324,6 @@ h2 {
 .portfolio {
   padding: 4rem 2rem;
   color: #fff;
-  position: relative;
 }
 .portfolio h2 {
   padding: 0;
@@ -259,11 +332,13 @@ h2 {
 }
 .portfolio .projects-wrapper {
   display: flex;
-  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
 }
 .portfolio .project-card {
-  flex: 0 0 auto;
-  width: 220px;
+  position: relative;
+  flex: 0 0 40%;
   background: #1f1f1f;
   border-radius: 15px;
   padding: 1rem;
@@ -271,10 +346,16 @@ h2 {
   cursor: pointer;
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
   transition: transform 0.3s ease;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .portfolio .project-card {
+    flex: none;
+    width: 90%;
+  }
 }
 .portfolio .project-card h3 {
   margin-top: 1rem;
-  margin-bottom: 1rem;
   font-size: 1.1rem;
   height: 65px;
 }
@@ -286,70 +367,69 @@ h2 {
 }
 .portfolio .project-card:hover {
   transform: scale(1.05);
-}
-@keyframes scroll-left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  border: solid 2px purple;
 }
 
-.carousel-container {
-  position: relative;
-  overflow: hidden;
+/* Calque hover sur projet */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
-}
-
-.projects-carousel {
-  overflow: hidden;
-  width: 100%;
-  position: relative;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.projects-wrapper {
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* calque sombre semi-transparent */
+  opacity: 0;
+  transition: opacity 0.3s ease;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
   gap: 30px;
-  width: max-content;
-  animation: scroll-loop 60s linear infinite;
 }
 
-@keyframes scroll-loop {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+.project-card:hover .overlay {
+  opacity: 1;
 }
-.project-card {
-  flex: 0 0 auto;
-  width: 220px;
-  background: #1f1f1f;
-  border-radius: 15px;
-  padding: 1rem;
-  text-align: center;
+
+/* Btn des projets */
+.btn-projet {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+.btn-projet button,
+.btn-projet a {
+  border: none;
+  border-radius: 10px;
+  background: none;
+  background-color: white;
+  color: #333;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-  transition: transform 0.3s ease;
+  text-decoration: none;
+}
+@media (max-width: 450px) {
+  .btn-projet {
+    flex-direction: column;
+  }
 }
 
+/* Modales des projets*/
 .modal {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
   background: rgba(0, 0, 0, 0.8);
   display: none;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   z-index: 1000;
-  overflow: auto;
-  padding: 2rem;
+  overflow-y: auto;
 }
 
 .modal.show {
@@ -357,68 +437,112 @@ h2 {
 }
 
 .modal-content {
-  position: relative;
   background: #1f1f1f;
   color: #fff;
   padding: 2rem;
+  margin-top: 50px;
+  margin-bottom: 50px;
   border-radius: 15px;
-  max-width: 600px;
-  width: 100%;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+  width: 80%;
 }
 .modal-content #modal-body {
   font-size: 18px;
+  display: flex;
+  flex-direction: row;
 }
-.modal-content #modal-body h3 {
+.modal-content #modal-body .modal-details {
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.modal-content #modal-body .modal-details h3 {
   margin-top: 20px;
   margin-bottom: 3rem;
   font-size: 25px;
-  width: 70%;
   text-align: center;
 }
-.modal-content #modal-body img {
-  width: 120px;
-  position: absolute;
-  top: 5rem;
-  right: 2rem;
-  border-radius: 10px;
-  object-fit: cover;
-}
-.modal-content #modal-body #modal-description {
+.modal-content #modal-body .modal-details #modal-description {
   font-style: italic;
   padding-bottom: 1.5rem;
-  width: 75%;
 }
-.modal-content #modal-body #modal-stack,
-.modal-content #modal-body #modal-skills {
+.modal-content #modal-body .modal-details #modal-stack,
+.modal-content #modal-body .modal-details #modal-skills {
   padding-bottom: 1rem;
   padding-left: 1.5rem;
 }
-.modal-content #modal-body #modal-time {
+.modal-content #modal-body .modal-details #modal-time {
   padding-bottom: 1rem;
 }
-.modal-content #modal-body .visit-site {
-  padding: 0.5rem 1rem;
-  position: absolute;
-  top: 18rem;
-  right: 2rem;
-  background: #ae7c9f;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 10px;
-  transition: background 0.3s;
+.modal-content #modal-body .modal-assets {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  width: 40%;
+  padding: 30px 0;
 }
-.modal-content #modal-body .visit-site:hover {
-  background: #c793b3;
+.modal-content #modal-body .modal-assets img {
+  width: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+  max-width: 100%;
+  height: auto;
+}
+.modal-content #modal-body .modal-assets .visit-site,
+.modal-content #modal-body .modal-assets .visit-github {
+  border: none;
+  border-radius: 10px;
+  background: none;
+  background-color: white;
+  color: #333;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  width: 30%;
+  max-width: 300px;
+  text-align: center;
+}
+@media (max-width: 1023px) {
+  .modal-content #modal-body {
+    flex-direction: column;
+    align-items: center;
+  }
+  .modal-content #modal-body .modal-details,
+  .modal-content #modal-body .modal-assets {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .modal-content #modal-body .modal-details {
+    align-items: center;
+  }
+  .modal-content #modal-body .modal-details h3 {
+    width: 90%;
+    font-size: 22px;
+  }
+  .modal-content #modal-body #modal-description {
+    padding: 1rem 0;
+    text-align: center;
+  }
+  .modal-content #modal-body #modal-stack,
+  .modal-content #modal-body #modal-skills {
+    padding-left: 0;
+    text-align: left;
+    margin: 0 auto;
+    max-width: 500px;
+  }
 }
 .modal-content .close-modal {
-  position: absolute;
-  top: 15px;
-  right: 20px;
   font-size: 2rem;
   cursor: pointer;
 }
 
+/* Section contact */
 .contact {
   margin-bottom: 100px;
 }
@@ -505,6 +629,11 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.footer p {
+  width: 90%;
+  max-width: 379px;
+  text-align: center;
 }
 
 /*# sourceMappingURL=main.css.map */

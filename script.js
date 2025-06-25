@@ -1,34 +1,95 @@
-// Cards compétences
+// Animation écriture bannière
+document.addEventListener("DOMContentLoaded", function () {
+  // eslint-disable-next-line no-undef
+  new Typed("#typed-text", {
+    strings: ["Développeuse web", "Orientée frontend", "À votre écoute"],
+    typeSpeed: 50,
+    backSpeed: 20,
+    backDelay: 1500,
+    loop: true,
+    showCursor: true,
+    cursorChar: "|",
+  });
+});
+
+// menu
+// eslint-disable-next-line no-undef
+const burgerIcon = lottie.loadAnimation({
+  container: document.getElementById("lottie-list"),
+  renderer: "svg",
+  loop: false,
+  autoplay: false,
+  path: "./assets/icons/List.json",
+});
+
+const icon = document.getElementById("lottie-list");
+const mobileMenu = document.getElementById("mobile-menu");
+let isMenuOpen = false;
+
+// Ouvre et ferme le menu
+function toggleMenu() {
+  isMenuOpen = !isMenuOpen;
+  burgerIcon.setDirection(isMenuOpen ? 1 : -1);
+  burgerIcon.play();
+
+  mobileMenu.classList.toggle("open", isMenuOpen);
+  document.body.classList.toggle("noscroll", isMenuOpen);
+}
+
+// Clic sur l’icône menu
+icon.addEventListener("click", (e) => {
+  e.stopPropagation(); // évite que le clic sur l’icône ferme directement le menu
+  toggleMenu();
+});
+
+// Clic à l’extérieur du menu → fermeture
+document.addEventListener("click", (e) => {
+  const clickOutsideMenu =
+    !mobileMenu.contains(e.target) && !icon.contains(e.target);
+  if (isMenuOpen && clickOutsideMenu) {
+    toggleMenu();
+  }
+});
+
+// Clic sur un lien du menu → fermeture
+document.querySelectorAll("#mobile-menu a").forEach((link) => {
+  link.addEventListener("click", () => {
+    if (isMenuOpen) {
+      toggleMenu();
+    }
+  });
+});
+
+// *** Cards compétences *** //
 const cards = document.querySelectorAll(".card__inner");
 
 cards.forEach((card) => {
   card.addEventListener("click", () => {
-    card.classList.toggle("is-flipped");
+    const front = card.querySelector(".card__title");
+
+    const flipDuration = 258;
+
+    if (!card.classList.contains("is-flipped")) {
+      // Si la carte est en front et qu'on va vers le back
+      card.classList.add("is-flipped");
+
+      // Attendre que le flip soit terminé avant de cacher le titre
+      setTimeout(() => {
+        front.classList.add("hidden");
+      }, flipDuration);
+    } else {
+      // Si on revient en front
+      card.classList.remove("is-flipped");
+
+      // Attendre la fin du retour pour afficher le titre
+      setTimeout(() => {
+        front.classList.remove("hidden");
+      }, flipDuration);
+    }
   });
 });
 
-// ***** Carousel projets ***** //
-
-const wrapper = document.querySelector(".projects-wrapper");
-const allCards = Array.from(wrapper.children);
-const carousel = document.querySelector(".projects-carousel");
-
-// Dupliquer les projets pour un défilement infini fluide
-allCards.forEach((card) => {
-  const clone = card.cloneNode(true);
-  wrapper.appendChild(clone);
-});
-
-carousel.addEventListener("mouseenter", () => {
-  wrapper.style.animationPlayState = "paused";
-});
-
-carousel.addEventListener("mouseleave", () => {
-  wrapper.style.animationPlayState = "running";
-});
-
 // ***** Gestion modal projets ***** //
-
 const modal = document.getElementById("project-modal");
 const modalTitle = document.getElementById("modal-title");
 const modalImg = document.getElementById("modal-img");
@@ -39,17 +100,6 @@ const closeModal = document.querySelector(".close-modal");
 
 // Données des projets
 const projectDetails = [
-  {
-    title: "Site internet de Booki - agence de voyage",
-    img: "./assets/projects/projet1.png",
-    description:
-      "Agence de voyage pour la recherche de logements à louer et activités partout en France",
-    stack: "HTML, CSS, responsive",
-    time: "1 semaine",
-    skills:
-      "Implémenter une interface responsive avec HTML et CSS, Installer un environnement de développement front-end, Intégrer du contenu conformément à une maquette avec HTML et CSS",
-    link: "",
-  },
   {
     title: "Site internet OhMyFood - réservation de menu en ligne",
     img: "./assets/projects/projet2.png",
@@ -92,15 +142,6 @@ const projectDetails = [
     link: "https://estelle-fqt.github.io/Projet8-Referencement/",
   },
   {
-    title: "Site internet de la photographe Robbie Lens",
-    img: "./assets/projects/projet6.png",
-    description: "Une expérience de création d'un site web en HTML et CSS",
-    stack: "HTML, CSS",
-    time: "1 semaine",
-    skills: "Intégration de l'interface d'un site web",
-    link: "https://estelle-fqt.github.io/Photographe-RobbieLens/",
-  },
-  {
     title: "Site internet développeuse web Estelle Fouqueteau",
     img: "./assets/projects/projet7.png",
     description: "Création de mon site web en tant que freelance",
@@ -108,17 +149,6 @@ const projectDetails = [
     time: "2 semaines",
     skills: "Intégration d'un site web dynamique en React.js",
     link: "https://espritdev.com/",
-  },
-  {
-    title: "Site internet de l'agence événementielle 724events'",
-    img: "./assets/projects/projet8.png",
-    description: "Une expérience de debogage d'un site web",
-    stack:
-      "Tests unitaires, Tests fonctionnels, React Developer Tools, Yarn, Node.js",
-    time: "1 semaine",
-    skills:
-      "Débugger un site web grâce aux Chrome DevTools, Rédiger un cahier de recette pour tester un site",
-    link: "https://github.com/estelle-fqt/Projet9-Debugger-un-site",
   },
   {
     title: "Site internet de la banque ArgentBank",
@@ -132,8 +162,8 @@ const projectDetails = [
   },
 ];
 
-// Ajout des événements au clic sur chaque carte
-document.querySelectorAll(".project-card").forEach((card) => {
+// Ouverture de la modale
+document.querySelectorAll(".show-details").forEach((card) => {
   card.addEventListener("click", () => {
     const index = card.dataset.project;
     const project = projectDetails[index];
