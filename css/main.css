@@ -189,6 +189,9 @@ body.noscroll {
 .about .about-me .my-softskills {
   margin-top: 2rem;
 }
+.about .about-me .my-softskills li {
+  margin-bottom: 30px;
+}
 .about .about-me .my-softskills strong {
   color: #30a6be;
 }
