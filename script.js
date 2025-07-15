@@ -102,7 +102,7 @@ const closeModal = document.querySelector(".close-modal");
 const projectDetails = [
   {
     title: "Site internet OhMyFood - réservation de menu en ligne",
-    img: "./assets/projects/projet2.png",
+    img: "./assets/projects/projet2.webp",
     description: "Une expérience UX/UI avec intégration d'animations",
     stack: "HTML, CSS, Sass, Mobile first",
     time: "2 semaines",
@@ -112,7 +112,7 @@ const projectDetails = [
   },
   {
     title: "Site internet de l'architecte d'intérieur Sophie Bluel",
-    img: "./assets/projects/projet3.png",
+    img: "./assets/projects/projet3.webp",
     description: "Une expérience JavaScript pour dynamiser un site web",
     stack: "HTML CSS, JavaScript, API REST",
     time: "2 semaines",
@@ -122,7 +122,7 @@ const projectDetails = [
   },
   {
     title: "Site internet Kasa - réservation de location",
-    img: "./assets/projects/projet4.png",
+    img: "./assets/projects/projet4.webp",
     description: "Une expérience de création d'application web en React",
     stack: "HTML CSS, React, Node.js",
     time: "2 semaines",
@@ -132,7 +132,7 @@ const projectDetails = [
   },
   {
     title: "Site internet de la photographe Nina Carducci",
-    img: "./assets/projects/projet5.png",
+    img: "./assets/projects/projet5.webp",
     description:
       "Une expérience d'optimisation du référencement et d'optimisation de performances",
     stack:
@@ -143,7 +143,7 @@ const projectDetails = [
   },
   {
     title: "Site internet développeuse web Estelle Fouqueteau",
-    img: "./assets/projects/projet7.png",
+    img: "./assets/projects/projet7.webp",
     description: "Création de mon site web en tant que freelance",
     stack: "HTML, CSS, React",
     time: "2 semaines",
@@ -152,7 +152,7 @@ const projectDetails = [
   },
   {
     title: "Site internet de la banque ArgentBank",
-    img: "./assets/projects/projet9.png",
+    img: "./assets/projects/projet9.webp",
     description: "Intégration en React et gestion d'état avec Redux",
     stack: "React.js, Redux Toolkit, API REST et Swagger, Node.js",
     time: "2 semaines",
