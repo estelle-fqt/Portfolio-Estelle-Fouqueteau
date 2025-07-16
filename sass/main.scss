@@ -1,8 +1,7 @@
 $black-color: #060505;
-$red-color: #711a2e;
-$blue-color: #272a61;
-$pink-color: #451c47;
-$purple-color: #392250;
+$purple-color: #800080;
+$blue-color: #30a6be;
+$orange-color: #d96f66;
 
 * {
   margin: 0;
@@ -22,7 +21,7 @@ h2 {
   padding-left: 2rem;
 }
 
-/* Section Accueil */
+/* SECTION BANNER */
 .banner {
   background-image: url("../assets/backgroundImg.webp");
   background-position: center;
@@ -134,13 +133,13 @@ body.noscroll {
   height: 100vh;
 }
 
-/* Section à propos */
+/* SECTION A PROPOS */
 .about {
   margin-top: 4rem;
   margin-bottom: 4rem;
 
   h2 {
-    color: purple;
+    color: $purple-color;
     margin-bottom: 4rem;
   }
 
@@ -183,14 +182,14 @@ body.noscroll {
     .my-history {
       margin-top: 0rem;
       strong {
-        color: purple;
+        color: $purple-color;
       }
     }
 
     .my-philosophy {
       margin-top: 6rem;
       strong {
-        color: #30a6be;
+        color: $blue-color;
       }
       @media (max-width: 1030px) {
         margin-top: 10px;
@@ -203,7 +202,7 @@ body.noscroll {
         margin-bottom: 30px;
       }
       strong {
-        color: #30a6be;
+        color: $blue-color;
       }
       @media (max-width: 1030px) {
         margin-top: 10px;
@@ -212,12 +211,12 @@ body.noscroll {
 
     h3 {
       font-size: 1.5rem;
-      color: purple;
+      color: $purple-color;
       margin-bottom: 1rem;
     }
 
     h4 {
-      color: #30a6be;
+      color: $blue-color;
       margin-bottom: 1rem;
     }
 
@@ -234,10 +233,10 @@ body.noscroll {
   }
 }
 
-/* Section compétences*/
+/* SECTION COMPETENCESs*/
 .skills {
   h2 {
-    color: #d96f66;
+    color: $orange-color;
     margin-top: 4rem;
   }
   .skills-contain {
@@ -335,7 +334,7 @@ body.noscroll {
         h3 {
           margin-bottom: 0.5rem;
           font-size: 1.1rem;
-          color: #d96f66;
+          color: $orange-color;
         }
 
         ul {
@@ -357,13 +356,14 @@ body.noscroll {
   }
 }
 
+/* SECTION PORTFOLIO */
 .portfolio {
   padding: 4rem 2rem;
   color: #fff;
 
   h2 {
     padding: 0;
-    color: purple;
+    color: $purple-color;
     margin-bottom: 40px;
   }
 
@@ -407,7 +407,7 @@ body.noscroll {
 
   .project-card:hover {
     transform: scale(1.05);
-    border: solid 2px purple;
+    border: solid 2px $purple-color;
   }
 }
 
@@ -592,12 +592,12 @@ body.noscroll {
   }
 }
 
-/* Section contact */
+/* SECTION CONTACT */
 .contact {
   margin-bottom: 100px;
 
   .contact-title {
-    color: #30a6be;
+    color: $blue-color;
   }
 
   .contact-content {
@@ -632,7 +632,7 @@ body.noscroll {
   }
 
   .contact-email {
-    color: #30a6be;
+    color: $blue-color;
     text-decoration: none;
   }
 
@@ -646,43 +646,6 @@ body.noscroll {
   .fa-github,
   .fa-linkedin {
     font-size: 2rem;
-  }
-
-  .input-group {
-    margin-bottom: 15px;
-  }
-
-  .input-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-
-  .input-group input,
-  .input-group textarea {
-    width: 300px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-  }
-
-  .input-group textarea {
-    resize: vertical;
-  }
-
-  .btn-submit {
-    background-color: #30a6be;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    cursor: pointer;
-  }
-
-  .btn-submit:hover {
-    background-color: rgb(34, 104, 151);
   }
 }
 

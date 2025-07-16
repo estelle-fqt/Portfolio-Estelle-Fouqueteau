@@ -24,7 +24,7 @@ const burgerIcon = lottie.loadAnimation({
 
 const icon = document.getElementById("lottie-list");
 const mobileMenu = document.getElementById("mobile-menu");
-let isMenuOpen = false;
+let isMenuOpen = false; //var d'état pr savoir si menu ouvert ou fermé
 
 // Ouvre et ferme le menu
 function toggleMenu() {
@@ -96,6 +96,7 @@ const modalImg = document.getElementById("modal-img");
 const modalDescription = document.getElementById("modal-description");
 const modalTime = document.getElementById("modal-time");
 const modalLink = document.getElementById("modal-link");
+const modalGithub = document.getElementById("modal-github");
 const closeModal = document.querySelector(".close-modal");
 
 // Données des projets
@@ -109,6 +110,7 @@ const projectDetails = [
     skills:
       "Intégrer une maquette en mobile-first, Mettre en œuvre des animations CSS, Versionner le projet avec Git et Github",
     link: "https://estelle-fqt.github.io/Projet4-OhMyFood/",
+    github: "https://github.com/estelle-fqt/Projet4-OhMyFood",
   },
   {
     title: "Site internet de l'architecte d'intérieur Sophie Bluel",
@@ -119,6 +121,7 @@ const projectDetails = [
     skills:
       "Récupérer les données utilisateurs dans le JavaScript via des formulaires, Gérer les événements utilisateurs avec JavaScript, Manipuler les éléments du DOM avec JavaScript",
     link: "",
+    github: "https://github.com/estelle-fqt/Projet6-architecte-sophie-bluel",
   },
   {
     title: "Site internet Kasa - réservation de location",
@@ -129,6 +132,7 @@ const projectDetails = [
     skills:
       "Intégrer una application avec React et Vite, Configurer la navigation entre les pages avec React Router, Mettre en œuvre des animations CSS, Développer une interface web avec Sass",
     link: "",
+    github: "https://github.com/estelle-fqt/Projet7-Kasa",
   },
   {
     title: "Site internet de la photographe Nina Carducci",
@@ -140,6 +144,7 @@ const projectDetails = [
     time: "1 semaine",
     skills: "Optimiser la performance d'un site web",
     link: "https://estelle-fqt.github.io/Projet8-Referencement/",
+    github: "https://github.com/estelle-fqt/Projet8-Referencement",
   },
   {
     title: "Site internet développeuse web Estelle Fouqueteau",
@@ -149,6 +154,7 @@ const projectDetails = [
     time: "2 semaines",
     skills: "Intégration d'un site web dynamique en React.js",
     link: "https://espritdev.com/",
+    github: "https://github.com/estelle-fqt/Esprit-dev",
   },
   {
     title: "Site internet de la banque ArgentBank",
@@ -159,6 +165,7 @@ const projectDetails = [
     skills:
       "Afficher les données du backend sur l'interface via des appels API, Configurer des routes API pour la communication client / serveur, Implémenter la gestion des données avec Redux pour assurer le fonctionnement du front",
     link: "https://github.com/estelle-fqt/Project-10-Bank-API",
+    github: "https://github.com/estelle-fqt/Project-10-Bank-API",
   },
 ];
 
@@ -177,10 +184,11 @@ document.querySelectorAll(".show-details").forEach((card) => {
     //gestion du bouton "voir le projet"
     if (project.link && project.link.trim() !== "") {
       modalLink.href = project.link;
-      modalLink.style.display = "inline-block"; // ou "flex" selon ton CSS
+      modalLink.style.display = "inline-block";
     } else {
       modalLink.style.display = "none";
     }
+    modalGithub.href = project.github;
 
     // Ajoute la stack sous forme de liste à puces
     const modalStack = document.getElementById("modal-stack");
